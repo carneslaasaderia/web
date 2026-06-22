@@ -16,18 +16,10 @@ body{
 /* HEADER */
 
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
-    padding:20px 50px;
-
-    background:white;
-    border-bottom:1px solid #e5e5e5;
+    padding:15px 30px;
 }
 
 .logo h1{
@@ -35,7 +27,7 @@ header{
     color:#111;
 }
 .logo img{
-    height:80px;
+    height:55px;
     width:auto;
     display:block;
 }
