@@ -34,7 +34,11 @@ header{
     font-size:2rem;
     color:#111;
 }
-
+.logo img{
+    height:80px;
+    width:auto;
+    display:block;
+}
 .logo p{
     color:#c79d4a;
     font-weight:bold;
@@ -249,10 +253,5 @@ footer{
     .hero h2{
         font-size:2.2rem;
     }
-	.logo img{
-    height:80px;
-    width:auto;
-    display:block;
-	}
 
 }
