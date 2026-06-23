@@ -1,47 +1,93 @@
-const slides = document.querySelectorAll('.friend-slide');
+let friendIndex = 0;
 
-let current = 0;
+function moveFriends(direction){
 
-function updateCarousel(){
+    const cards = document.querySelectorAll('.friend-slide');
 
-    slides.forEach(slide=>{
-        slide.classList.remove('active');
+    if(cards.length === 0){
+        return;
+    }
+
+    friendIndex += direction;
+
+    if(friendIndex < 0){
+        friendIndex = cards.length - 1;
+    }
+
+    if(friendIndex >= cards.length){
+        friendIndex = 0;
+    }
+
+    cards.forEach(card=>{
+        card.classList.remove('active');
     });
 
-    slides[current].classList.add('active');
-
-    slides[current].scrollIntoView({
-        behavior:'smooth',
-        inline:'center',
-        block:'nearest'
-    });
-
+    cards[friendIndex].classList.add('active');
 }
 
-document.querySelector('.next')
-.addEventListener('click',()=>{
+/* Cambio automático Friends */
 
-    current++;
+setInterval(()=>{
 
-    if(current >= slides.length){
-        current = 0;
+    moveFriends(1);
+
+},4000);
+
+
+/* ===================================== */
+/* CARRUSEL CORTES */
+/* ===================================== */
+
+let corteIndex = 0;
+
+function moveCortes(direction){
+
+    const cards = document.querySelectorAll('.corte-slide');
+
+    if(cards.length === 0){
+        return;
     }
 
-    updateCarousel();
+    corteIndex += direction;
 
-});
-
-document.querySelector('.prev')
-.addEventListener('click',()=>{
-
-    current--;
-
-    if(current < 0){
-        current = slides.length - 1;
+    if(corteIndex < 0){
+        corteIndex = cards.length - 1;
     }
 
-    updateCarousel();
+    if(corteIndex >= cards.length){
+        corteIndex = 0;
+    }
+
+    cards.forEach(card=>{
+        card.classList.remove('active');
+    });
+
+    cards[corteIndex].classList.add('active');
+}
+
+/* Cambio automático Cortes */
+
+setInterval(()=>{
+
+    moveCortes(1);
+
+},5000);
+
+
+/* Inicializar */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const friendCards = document.querySelectorAll('.friend-slide');
+
+    if(friendCards.length > 0){
+        friendCards[0].classList.add('active');
+    }
+
+    const corteCards = document.querySelectorAll('.corte-slide');
+
+    if(corteCards.length > 0){
+        corteCards[0].classList.add('active');
+    }
 
 });
-
-updateCarousel();

@@ -21,8 +21,7 @@
 <a href="#friends">Asadería Friends</a>
 <a href="#contacto">Contacto</a>
 </nav>
-<a class="btn-whatsapp" href="https://wa.me/56920908476" target="_blank">WhatsApp</a><a class="btn-instagram" href="https://instagram.com/laasaderia.cl" target="_blank">Instagram</a>
-</header>
+<div class="header-buttons"><a class="btn-whatsapp" href="https://wa.me/56920908476" target="_blank">WhatsApp</a><a class="btn-instagram" href="https://instagram.com/laasaderia.cl" target="_blank">Instagram</a></div></header>
 <section class="hero" id="inicio">
 <div class="hero-text">
 <h2>Carne fresca, atención cercana y calidad de verdad.</h2>
@@ -50,37 +49,43 @@ donde la atención personalizada y la confianza siguen siendo parte de nuestra f
 </section>
 <section id="cortes">
 <h2>Nuestros Cortes</h2>
-<div class="productos">
-<div class="producto">
+
+
+<div class="cortes-carousel">
+<button class="carousel-btn" onclick="moveCortes(-1)">❮</button>
+<div class="carousel-track" id="cortesTrack">
+<div class="corte-slide active">
 <img src="img/cortes/lomo-liso.jpg"/>
 <h3>Lomo Liso</h3>
-<p>Corte magro y versátil, ideal para parrilla, horno o plancha.</p>
+<p>Ideal para parrilla, horno o plancha.</p>
 </div>
-<div class="producto">
+<div class="corte-slide">
 <img src="img/cortes/pollo-ganso.jpg"/>
 <h3>Pollo Ganso</h3>
-<p>Perfecto para guisos, estofados y preparaciones al horno.</p>
+<p>Perfecto para guisos y estofados.</p>
 </div>
-<div class="producto">
+<div class="corte-slide">
 <img src="img/cortes/chuleta-cerdo.jpg"/>
 <h3>Chuletas de Cerdo</h3>
-<p>Jugosas y sabrosas, ideales para parrilla o sartén.</p>
+<p>Jugosas y sabrosas para parrilla.</p>
 </div>
-<div class="producto">
+<div class="corte-slide">
 <img src="img/cortes/pechuga-pollo.jpg"/>
 <h3>Pechuga de Pollo</h3>
-<p>Un clásico saludable y versátil para toda la familia.</p>
+<p>Versátil para toda la familia.</p>
 </div>
-<div class="producto">
+<div class="corte-slide">
 <img src="img/cortes/trutro-pollo.jpg"/>
 <h3>Trutros de Pollo</h3>
-<p>Ideal para horno, parrilla o preparaciones caseras.</p>
+<p>Ideal para horno o parrilla.</p>
 </div>
-<div class="producto">
+<div class="corte-slide">
 <img src="img/cortes/posta-negra.jpg"/>
 <h3>Posta Negra</h3>
-<p>Corte tradicional de vacuno ideal para olla, estofados y preparaciones de cocción lenta.</p>
+<p>Excelente para olla y cocción lenta.</p>
 </div>
+</div>
+<button class="carousel-btn" onclick="moveCortes(1)">❯</button>
 </div>
 </section>
 <section id="ofertas">
@@ -97,8 +102,6 @@ donde la atención personalizada y la confianza siguen siendo parte de nuestra f
 Nuestros personajes nacieron como una forma entretenida de acercarnos a las familias del barrio.
 Hoy forman parte de nuestras promociones, actividades y colección de stickers que muchos niños y clientes ya conocen.
 </p>
-
-
 <div class="friends-carousel">
 <button class="carousel-btn" onclick="moveFriends(-1)">❮</button>
 <div class="carousel-track" id="friendsTrack">

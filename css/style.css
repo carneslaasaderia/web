@@ -480,4 +480,104 @@ section{
 
         width:150px;
     }
+
+/* BOTONES HEADER */
+
+.header-buttons{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+.header-buttons{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.btn-instagram{
+    background:#E1306C;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-instagram:hover{
+    opacity:.9;
+}
+}
+
+
+/* ===================================== */
+/* HEADER BUTTONS */
+/* ===================================== */
+
+.header-buttons{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+/* ===================================== */
+/* CARRUSEL CORTES */
+/* ===================================== */
+
+.cortes-carousel{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    margin-top:40px;
+}
+
+.corte-slide{
+    min-width:240px;
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+    transition:.4s;
+    transform:scale(.90);
+    opacity:.65;
+}
+
+.corte-slide.active{
+    transform:scale(1.10);
+    opacity:1;
+    border:3px solid #c79d4a;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.corte-slide img{
+    width:220px;
+    max-width:100%;
+    height:auto;
+    border-radius:12px;
+}
+
+.corte-slide h3{
+    margin-top:15px;
+}
+
+.corte-slide p{
+    margin-top:8px;
+    font-size:.95rem;
+}
+
+@media(max-width:900px){
+
+    .header-buttons{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .corte-slide{
+        min-width:220px;
+    }
+
+    .corte-slide img{
+        width:180px;
+    }
 }
