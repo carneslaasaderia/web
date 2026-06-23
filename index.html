@@ -49,8 +49,6 @@ donde la atención personalizada y la confianza siguen siendo parte de nuestra f
 </section>
 <section id="cortes">
 <h2>Nuestros Cortes</h2>
-
-
 <div class="cortes-carousel">
 <button class="carousel-btn" onclick="moveCortes(-1)">❮</button>
 <div class="carousel-track" id="cortesTrack">
@@ -153,30 +151,7 @@ Hoy forman parte de nuestras promociones, actividades y colección de stickers q
 </div>
 <button class="carousel-btn" onclick="moveFriends(1)">❯</button>
 </div>
-<script>
-let friendIndex = 0;
 
-function moveFriends(direction){
-    const track = document.getElementById('friendsTrack');
-    const cards = document.querySelectorAll('.friend-slide');
-
-    friendIndex += direction;
-
-    if(friendIndex < 0) friendIndex = cards.length - 1;
-    if(friendIndex >= cards.length) friendIndex = 0;
-
-    cards.forEach(card => card.classList.remove('active'));
-    cards[friendIndex].classList.add('active');
-
-    cards[friendIndex].scrollIntoView({
-        behavior:'smooth',
-        inline:'center',
-        block:'nearest'
-    });
-}
-
-setInterval(()=>moveFriends(1),4000);
-</script>
 </section>
 <section id="contacto">
 <h2>Visítanos</h2>
