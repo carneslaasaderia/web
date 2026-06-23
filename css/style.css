@@ -56,8 +56,7 @@ font-weight:600;
 transition:.3s;
 }
 
-nav a:hover
-
+/* removed broken block */
 .btn-whatsapp{
 background:#25d366;
 color:white;
@@ -660,5 +659,86 @@ nav a:hover{
     .corte-slide img{
         width:180px;
         height:180px;
+    }
+}
+
+
+/* ===================================== */
+/* FIXES FINALES LA ASADERIA */
+/* ===================================== */
+
+nav a:hover{
+    color:#c79d4a;
+}
+
+/* Botones redes */
+.header-buttons{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.btn-whatsapp,
+.btn-instagram{
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.btn-whatsapp{
+    background:#25D366;
+}
+
+.btn-instagram{
+    background:#E1306C;
+}
+
+.btn-whatsapp:hover,
+.btn-instagram:hover{
+    transform:translateY(-2px);
+    opacity:.9;
+}
+
+/* Hero balanceado */
+.hero{
+    grid-template-columns:1.2fr 0.8fr;
+    gap:40px;
+    padding:60px 80px;
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:520px;
+    height:auto;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Responsive */
+@media(max-width:900px){
+
+    .hero{
+        grid-template-columns:1fr;
+        padding:40px 20px;
+    }
+
+    .hero-image img{
+        max-width:420px;
+    }
+
+    .header-buttons{
+        flex-wrap:wrap;
+        justify-content:center;
     }
 }
