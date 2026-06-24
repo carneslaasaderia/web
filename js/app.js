@@ -1,8 +1,39 @@
 let friendIndex = 0;
+let corteIndex = 0;
+
+/* ===================================== */
+/* FUNCION GENERAL PARA MOVER SLIDERS */
+/* ===================================== */
+
+function updateSlider(trackId, selector, index){
+
+    const track = document.getElementById(trackId);
+    const cards = document.querySelectorAll(selector);
+
+    if(!track || cards.length === 0){
+        return;
+    }
+
+    cards.forEach(card=>{
+        card.classList.remove('active');
+    });
+
+    cards[index].classList.add('active');
+
+    const cardWidth = cards[0].offsetWidth;
+
+    track.style.transform =
+        `translateX(-${index * cardWidth}px)`;
+}
+
+/* ===================================== */
+/* FRIENDS */
+/* ===================================== */
 
 function moveFriends(direction){
 
-    const cards = document.querySelectorAll('.friend-slide');
+    const cards =
+        document.querySelectorAll('.friend-slide');
 
     if(cards.length === 0){
         return;
@@ -18,31 +49,21 @@ function moveFriends(direction){
         friendIndex = 0;
     }
 
-    cards.forEach(card=>{
-        card.classList.remove('active');
-    });
-
-    cards[friendIndex].classList.add('active');
+    updateSlider(
+        'friendsTrack',
+        '.friend-slide',
+        friendIndex
+    );
 }
 
-/* Cambio automático Friends */
-
-setInterval(()=>{
-
-    moveFriends(1);
-
-},4000);
-
-
 /* ===================================== */
-/* CARRUSEL CORTES */
+/* CORTES */
 /* ===================================== */
-
-let corteIndex = 0;
 
 function moveCortes(direction){
 
-    const cards = document.querySelectorAll('.corte-slide');
+    const cards =
+        document.querySelectorAll('.corte-slide');
 
     if(cards.length === 0){
         return;
@@ -58,36 +79,41 @@ function moveCortes(direction){
         corteIndex = 0;
     }
 
-    cards.forEach(card=>{
-        card.classList.remove('active');
-    });
-
-    cards[corteIndex].classList.add('active');
+    updateSlider(
+        'cortesTrack',
+        '.corte-slide',
+        corteIndex
+    );
 }
 
-/* Cambio automático Cortes */
+/* ===================================== */
+/* INICIALIZACION */
+/* ===================================== */
 
-setInterval(()=>{
+document.addEventListener('DOMContentLoaded',()=>{
 
-    moveCortes(1);
+    updateSlider(
+        'friendsTrack',
+        '.friend-slide',
+        0
+    );
 
-},5000);
+    updateSlider(
+        'cortesTrack',
+        '.corte-slide',
+        0
+    );
 
+    setInterval(()=>{
 
-/* Inicializar */
+        moveFriends(1);
 
-document.addEventListener('DOMContentLoaded', () => {
+    },4000);
 
-    const friendCards = document.querySelectorAll('.friend-slide');
+    setInterval(()=>{
 
-    if(friendCards.length > 0){
-        friendCards[0].classList.add('active');
-    }
+        moveCortes(1);
 
-    const corteCards = document.querySelectorAll('.corte-slide');
-
-    if(corteCards.length > 0){
-        corteCards[0].classList.add('active');
-    }
+    },5000);
 
 });
