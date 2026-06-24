@@ -20,10 +20,10 @@ function updateSlider(trackId, selector, index){
 
     cards[index].classList.add('active');
 
-    const cardWidth = cards[0].offsetWidth;
+    const cardWidth = 300;
 
     track.style.transform =
-        `translateX(-${index * cardWidth}px)`;
+		`translateX(-${index * 300}px)`;
 }
 
 /* ===================================== */

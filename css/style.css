@@ -448,8 +448,9 @@ footer{
 /* ===================================== */
 
 .carousel-window{
-    width:300px;
+    width:320px;
     overflow:hidden;
+    margin:auto;
 }
 
 .carousel-track{
@@ -460,11 +461,10 @@ footer{
     padding:20px 0;
 }
 
-.friend-slide,
-.corte-slide{
-    min-width:300px;
-    max-width:300px;
-    flex:0 0 300px;
+.friend-slide img,
+.corte-slide img{
+    width:100%;
+    display:block;
 }
 
 .friend-slide.active,
