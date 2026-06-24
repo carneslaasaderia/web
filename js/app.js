@@ -18,12 +18,6 @@ function updateFriends(){
     });
 
     cards[friendIndex].classList.add('active');
-
-    cards[friendIndex].scrollIntoView({
-        behavior:'smooth',
-        inline:'center',
-        block:'nearest'
-    });
 }
 
 function moveFriends(direction){
@@ -64,12 +58,6 @@ function updateCortes(){
     });
 
     cards[corteIndex].classList.add('active');
-
-    cards[corteIndex].scrollIntoView({
-        behavior:'smooth',
-        inline:'center',
-        block:'nearest'
-    });
 }
 
 function moveCortes(direction){
@@ -94,7 +82,7 @@ function moveCortes(direction){
 }
 
 /* ===================================== */
-/* INICIALIZACIÓN */
+/* INICIALIZACION */
 /* ===================================== */
 
 document.addEventListener('DOMContentLoaded',()=>{
