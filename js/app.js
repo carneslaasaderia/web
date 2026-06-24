@@ -1,95 +1,25 @@
-let friendIndex = 0;
-let corteIndex = 0;
+/*
+=========================================
+La Asadería
+app.js
+=========================================
 
-function centerCard(track, card){
+Actualmente el sitio no requiere JavaScript.
 
-    const cardCenter =
-        card.offsetLeft +
-        (card.offsetWidth / 2);
+Los carruseles fueron reemplazados por galerías
+para obtener una página más rápida, estable y
+fácil de mantener.
 
-    const scrollPosition =
-        cardCenter -
-        (track.clientWidth / 2);
+Aquí podremos agregar funcionalidades futuras como:
 
-    track.scrollTo({
-        left: Math.max(0, scrollPosition),
-        behavior:'smooth'
-    });
-}
+- Lightbox para las ofertas
+- Galería Asadería Friends
+- Botón "Volver arriba"
+- Animaciones suaves
+- Buscador de productos
 
-function updateFriends(){
+*/
 
-    const track =
-        document.getElementById('friendsTrack');
-
-    const cards =
-        document.querySelectorAll('.friend-slide');
-
-    cards.forEach(card=>{
-        card.classList.remove('active');
-    });
-
-    cards[friendIndex].classList.add('active');
-
-    centerCard(track, cards[friendIndex]);
-}
-
-function updateCortes(){
-
-    const track =
-        document.getElementById('cortesTrack');
-
-    const cards =
-        document.querySelectorAll('.corte-slide');
-
-    cards.forEach(card=>{
-        card.classList.remove('active');
-    });
-
-    cards[corteIndex].classList.add('active');
-
-    centerCard(track, cards[corteIndex]);
-}
-
-function moveFriends(direction){
-
-    const cards =
-        document.querySelectorAll('.friend-slide');
-
-    friendIndex += direction;
-
-    if(friendIndex < 0){
-        friendIndex = cards.length - 1;
-    }
-
-    if(friendIndex >= cards.length){
-        friendIndex = 0;
-    }
-
-    updateFriends();
-}
-
-function moveCortes(direction){
-
-    const cards =
-        document.querySelectorAll('.corte-slide');
-
-    corteIndex += direction;
-
-    if(corteIndex < 0){
-        corteIndex = cards.length - 1;
-    }
-
-    if(corteIndex >= cards.length){
-        corteIndex = 0;
-    }
-
-    updateCortes();
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-
-    updateFriends();
-    updateCortes();
-
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("La Asadería cargada correctamente.");
 });

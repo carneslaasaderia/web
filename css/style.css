@@ -467,3 +467,17 @@ footer{
     margin-top:10px;
     display:inline-flex;
 }
+
+
+/* GALERIAS FINALES */
+.cortes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.friends-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+.corte-card,.friend-card{background:white;border-radius:20px;padding:20px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.10);transition:.3s;}
+.corte-card:hover,.friend-card:hover{transform:translateY(-5px);}
+.corte-card img{width:100%;max-width:220px;border-radius:12px;}
+.friend-card img{width:100%;max-width:180px;}
+.friends-info{text-align:center;margin-top:30px;color:#666;}
+@media(max-width:900px){
+.cortes-grid{grid-template-columns:1fr;}
+.friends-grid{grid-template-columns:repeat(2,1fr);}
+}
