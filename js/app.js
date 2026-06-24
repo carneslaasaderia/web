@@ -1,119 +1,95 @@
 let friendIndex = 0;
 let corteIndex = 0;
 
-/* ===================================== */
-/* FRIENDS */
-/* ===================================== */
+function centerCard(track, card){
 
-function updateFriends() {
+    const cardCenter =
+        card.offsetLeft +
+        (card.offsetWidth / 2);
 
-    const track = document.getElementById('friendsTrack');
-    const cards = document.querySelectorAll('.friend-slide');
+    const scrollPosition =
+        cardCenter -
+        (track.clientWidth / 2);
 
-    if (!track || cards.length === 0) {
-        return;
-    }
+    track.scrollTo({
+        left: Math.max(0, scrollPosition),
+        behavior:'smooth'
+    });
+}
 
-    cards.forEach(card => {
+function updateFriends(){
+
+    const track =
+        document.getElementById('friendsTrack');
+
+    const cards =
+        document.querySelectorAll('.friend-slide');
+
+    cards.forEach(card=>{
         card.classList.remove('active');
     });
 
     cards[friendIndex].classList.add('active');
 
-    track.scrollTo({
-        left:
-            cards[friendIndex].offsetLeft -
-            (track.clientWidth / 2) +
-            (cards[friendIndex].clientWidth / 2),
-        behavior: 'smooth'
-    });
+    centerCard(track, cards[friendIndex]);
 }
 
-function moveFriends(direction) {
+function updateCortes(){
 
-    const cards = document.querySelectorAll('.friend-slide');
+    const track =
+        document.getElementById('cortesTrack');
 
-    if (cards.length === 0) {
-        return;
-    }
+    const cards =
+        document.querySelectorAll('.corte-slide');
+
+    cards.forEach(card=>{
+        card.classList.remove('active');
+    });
+
+    cards[corteIndex].classList.add('active');
+
+    centerCard(track, cards[corteIndex]);
+}
+
+function moveFriends(direction){
+
+    const cards =
+        document.querySelectorAll('.friend-slide');
 
     friendIndex += direction;
 
-    if (friendIndex < 0) {
+    if(friendIndex < 0){
         friendIndex = cards.length - 1;
     }
 
-    if (friendIndex >= cards.length) {
+    if(friendIndex >= cards.length){
         friendIndex = 0;
     }
 
     updateFriends();
 }
 
-/* ===================================== */
-/* CORTES */
-/* ===================================== */
+function moveCortes(direction){
 
-function updateCortes() {
-
-    const track = document.getElementById('cortesTrack');
-    const cards = document.querySelectorAll('.corte-slide');
-
-    if (!track || cards.length === 0) {
-        return;
-    }
-
-    cards.forEach(card => {
-        card.classList.remove('active');
-    });
-
-    cards[corteIndex].classList.add('active');
-
-    track.scrollTo({
-        left:
-            cards[corteIndex].offsetLeft -
-            (track.clientWidth / 2) +
-            (cards[corteIndex].clientWidth / 2),
-        behavior: 'smooth'
-    });
-}
-
-function moveCortes(direction) {
-
-    const cards = document.querySelectorAll('.corte-slide');
-
-    if (cards.length === 0) {
-        return;
-    }
+    const cards =
+        document.querySelectorAll('.corte-slide');
 
     corteIndex += direction;
 
-    if (corteIndex < 0) {
+    if(corteIndex < 0){
         corteIndex = cards.length - 1;
     }
 
-    if (corteIndex >= cards.length) {
+    if(corteIndex >= cards.length){
         corteIndex = 0;
     }
 
     updateCortes();
 }
 
-/* ===================================== */
-/* INICIALIZACIÓN */
-/* ===================================== */
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded',()=>{
 
     updateFriends();
     updateCortes();
-
-    setInterval(() => {
-        moveFriends(1);
-    }, 4000);
-
-    setInterval(() => {
-        moveCortes(1);
-    }, 5000);
 
 });

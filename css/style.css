@@ -177,7 +177,7 @@ section p{
 }
 
 /* ===================================== */
-/* CARRUSELES */
+/* CARRUSELES 001*/
 /* ===================================== */
 
 .carousel-track{
@@ -185,7 +185,7 @@ section p{
     gap:25px;
     overflow-x:auto;
     scroll-behavior:smooth;
-    padding:20px 10px;
+    padding:20px 40px;
     scrollbar-width:none;
 }
 
