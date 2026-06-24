@@ -183,11 +183,9 @@ section p{
 .carousel-track{
     display:flex;
     gap:25px;
-
-    overflow-x:hidden;
-
+    overflow-x:auto;
+    scroll-behavior:smooth;
     padding:20px 10px;
-
     scrollbar-width:none;
 }
 
