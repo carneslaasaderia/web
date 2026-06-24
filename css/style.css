@@ -443,33 +443,23 @@ footer{
     }
 }
 
+
+
 /* ===================================== */
-/* CARRUSEL V2 */
+/* AJUSTES CARRUSEL ESTABLE */
 /* ===================================== */
 
-.carousel-window{
-    width:320px;
-    overflow:hidden;
-    margin:auto;
-}
-
-.carousel-track{
-    display:flex;
-    gap:0;
-    overflow:hidden;
-    transition:transform .5s ease;
-    padding:20px 0;
-}
-
-.friend-slide img,
-.corte-slide img{
-    width:100%;
-    display:block;
+.friend-slide,
+.corte-slide{
+    opacity:.45;
 }
 
 .friend-slide.active,
 .corte-slide.active{
+    transform:scale(1.12);
+    opacity:1;
     border:3px solid #c79d4a;
+    z-index:2;
 }
 
 #contacto a{
@@ -479,18 +469,4 @@ footer{
 #contacto .btn-whatsapp{
     margin-top:10px;
     display:inline-flex;
-}
-
-@media(max-width:900px){
-
-    .carousel-window{
-        width:220px;
-    }
-
-    .friend-slide,
-    .corte-slide{
-        min-width:220px;
-        max-width:220px;
-        flex:0 0 220px;
-    }
 }
